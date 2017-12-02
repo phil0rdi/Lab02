@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Lab02</string>
+
+    <string name="lundi">Lundi</string>
+    <string name="messagelundi">"C'est sick lundi"</string>
+
+    <string name="mardi">Mardi</string>
+    <string name="messagemardi">"C'est sick mardi"</string>
+
+    <string name="mercredi">Mercredi</string>
+    <string name="messagemercredi">"C'est sick mercredi"</string>
+
+    <string name="jeudi">Jeudi</string>
+    <string name="messagejeudi">"C'est sick jeudi"</string>
+
+    <string name="vendredi">Vendredi</string>
+    <string name="messagevendredi">"C'est sick vendredi"</string>
+
+    <string name="samedi">Samedi</string>
+    <string name="messagesamedi">"C'est sick samedi"</string>
+
+    <string name="dimanche">Dimanche</string>
+    <string name="messagedimanche">"C'est sick dimanche"</string>
+
+
 </resources>

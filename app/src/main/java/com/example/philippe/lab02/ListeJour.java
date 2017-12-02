@@ -8,11 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListeJour extends AppCompatActivity {
+
+    private static final int[] names = {R.string.lundi, R.string.mardi, R.string.mercredi, R.string.jeudi, R.string.vendredi, R.string.samedi, R.string.dimanche};
+    private static final int[] images = {R.drawable.lundi, R.drawable.mardi, R.drawable.mercredi, R.drawable.jeudi, R.drawable.vendredi, R.drawable.samedi, R.drawable.dimanche};
+    private static final int[] messages = {R.string.messagelundi, R.string.messagemardi, R.string.messagemercredi, R.string.messagejeudi, R.string.messagevendredi, R.string.messagesamedi, R.string.messagedimanche};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +25,19 @@ public class ListeJour extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         final ArrayList<Journee> sem = new ArrayList<Journee>();
-        sem.add(new Journee("lundi", R.drawable.lignes, "Lundi, je fais du C++"));
+
+        for (int i = 0; i < 7; i++) {
+            sem.add(new Journee(getResources().getString(names[i]), images[i], getResources().getString(messages[i])));
+        }
+
+       /* sem.add(new Journee("lundi", R.drawable.lignes, "Lundi, je fais du C++"));
         sem.add(new Journee("mardi", R.drawable.rene, "J’aime les mardis"));
         sem.add(new Journee("mercredi", R.drawable.ic_launcher_background, "wouhou"));
         sem.add(new Journee("jeudi", R.drawable.ic_launcher_background, "youpii"));
         sem.add(new Journee("vendredi", R.drawable.ic_launcher_background, "maaaan"));
         sem.add(new Journee("samedi", R.drawable.ic_launcher_background, "aaaaaallo"));
-        sem.add(new Journee("dimanche", R.drawable.ic_launcher_background, "oup! dxza"));
+        sem.add(new Journee("dimanche", R.drawable.ic_launcher_background, "oup! dxza"));*/
 
         //JourneeAdapter ja = new JourneeAdapter(sem);
         // get activity_main.listview
@@ -75,9 +84,15 @@ public class ListeJour extends AppCompatActivity {
             return face;
         }
 
-        public void setJournee(Journee j) {
+        public void setJournee(final Journee j) {
             getName().setText(j.getNom());
             getFace().setImageResource(j.getAdresseImage());
+            this.row.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(view.getContext(), j.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }
