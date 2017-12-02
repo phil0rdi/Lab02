@@ -28,7 +28,7 @@ public class ListeJour extends AppCompatActivity {
         sem.add(new Journee("jeudi", R.drawable.ic_launcher_background, "youpii"));
         sem.add(new Journee("vendredi", R.drawable.ic_launcher_background, "maaaan"));
         sem.add(new Journee("samedi", R.drawable.ic_launcher_background, "aaaaaallo"));
-        sem.add(new Journee("dimanche", R.drawable.ic_launcher_background, "oup helaye"));
+        sem.add(new Journee("dimanche", R.drawable.ic_launcher_background, "oup dxza"));
 
         //JourneeAdapter ja = new JourneeAdapter(sem);
         // get activity_main.listview
